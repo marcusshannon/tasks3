@@ -12,19 +12,19 @@ use Mix.Config
 config :tracker, TrackerWeb.Endpoint,
   http: [port: {:system, "PORT"}],
   # This is critical for ensuring web-sockets properly authorize.
-  url: [host: "tasks3.marcusshannon.com", port: 443],
+  url: [host: "tasks3.marcusshannon.com", port: 80],
   cache_static_manifest: "priv/static/cache_manifest.json",
   server: true,
   root: ".",
   version: Application.spec(:phoenix_distillery, :vsn),
-  https: [
-    :inet6,
-    port: 443,
-    cipher_suite: :strong,
-    keyfile: "/etc/letsencrypt/live/tasks3.marcusshannon.com/privkey.pem",
-    certfile: "/etc/letsencrypt/live/tasks3.marcusshannon.com/fullchain.pem"
-  ],
-  force_ssl: [hsts: true]
+  # https: [
+  #   :inet6,
+  #   port: 443,
+  #   cipher_suite: :strong,
+  #   keyfile: "/etc/letsencrypt/live/tasks3.marcusshannon.com/privkey.pem",
+  #   certfile: "/etc/letsencrypt/live/tasks3.marcusshannon.com/fullchain.pem"
+  # ],
+  # force_ssl: [hsts: true]
 
 # Do not print debug messages in production
 config :logger, level: :info
